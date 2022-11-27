@@ -31,11 +31,11 @@
         "title":"###  RSI超卖买入法  ###\n",
         "code":["ret{0} = 0 \n",
             "ret = RSI(PERIOD_RSI)\n",
-            "if ret < objval:\n",
+            "if ret > objval:\n",
             "   kstop\n"],
         "period":"C",
         "select":false,
-        "objval":70
+        "objval": 25
     },
     "watch":["peroid","select","objval"],
     "exec_code":[
