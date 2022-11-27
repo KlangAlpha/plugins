@@ -1,7 +1,7 @@
 {
-    "id":"rsi",
-    "name":"RSI超卖指标",
-    "description":"通过RSI超卖决定是否卖买",
+    "id":"manear",
+    "name":"均线相近",
+    "description":"判断MA20和MA60是否相近",
     "author":"asmcos",
     "url":"https://github.com/KlangAlpha/plugins",
     "html":["<div class='box'>",
@@ -9,7 +9,7 @@
             "<div class='demo-checkbox'>",
 								"<input type='checkbox' id='md_checkbox_25{0}' class='filled-in chk-col-danger' checked='' v-model='sourcelist.{0}.select'>",
 								"<label for='md_checkbox_25{0}'><h4 class='box-title'>RSI</h4></label>",
-								"<label style='margin-left: 10px;margin-right: 5px; min-width: 40px;width:auto;'>RSI超卖值</label>",	
+								"<label style='margin-left: 10px;margin-right: 5px; min-width: 40px;width:auto;'>均线接近</label>",	
 								"<input class='filled-in chk-col-success'  type='number' name='number' v-model='sourcelist.{0}.objval'>",					
 							"</div>",
 		  
@@ -28,20 +28,25 @@
                                 "</div>",
              "</div>"],
     "sourceconf":{
-        "title":"###  RSI超卖买入法  ###\n",
+        "title":"###  均线接近指标  ###\n",
         "code":["ret{0} = 0 \n",
-            "ret = RSI(PERIOD_RSI)\n",
+            "ma20 = MA(PERIOD_MANEAR,20)\n",
+            "ma60 = MA(PERIOD_MANEAR,60)\n",
+            "ax = max(ma20,ma60)",
+            "in = min(ma20,ma60)",
+            "abs_val = abs(ax-in)",
+            "ret = abs_val / min",
             "if ret > objval:\n",
             "   kstop\n"],
         "period":"C",
         "select":false,
-        "objval":30 
+        "objval": 3
     },
     "watch":["peroid","select","objval"],
     "exec_code":[
         "if (that.sourcelist.{0}.select == true) {",
             " code += that.sourcelist.{0}.title;",
-            " code += 'PERIOD_RSI = ' + that.sourcelist.{0}.period  + ';';",
+            " code += 'PERIOD_MANEAR = ' + that.sourcelist.{0}.period  + ';';",
             " code += 'objval = ' + that.sourcelist.{0}.objval  +';';",
             " code += that.sourcelist.{0}.code ;",
         "}"
