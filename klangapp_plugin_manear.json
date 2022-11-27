@@ -35,7 +35,7 @@
             "ma_ax = max(ma20,ma60);\n",
             "ma_in = min(ma20,ma60);\n",
             "ret = (ma_ax - ma_in) / ma_in;\n",
-            "ret = ret * 100",
+            "ret = ret * 100;\n",
             "if ret > objval:\n",
             "   kstop\n"],
         "period":"C",
