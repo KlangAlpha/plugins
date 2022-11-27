@@ -3,7 +3,7 @@
     "name":"RSI超卖指标",
     "description":"通过RSI超卖决定是否卖买",
     "author":"asmcos",
-    "url":"https://github.com/KlangAplha/plugins",
+    "url":"https://github.com/KlangAlpha/plugins",
     "html":["<div class='box'>",
           "<div class='box-header with-border'>",
             "<div class='demo-checkbox'>",
