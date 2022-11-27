@@ -8,8 +8,8 @@
           "<div class='box-header with-border'>",
             "<div class='demo-checkbox'>",
 								"<input type='checkbox' id='md_checkbox_25{0}' class='filled-in chk-col-danger' checked='' v-model='sourcelist.{0}.select'>",
-								"<label for='md_checkbox_25{0}'><h4 class='box-title'>RSI</h4></label>",
-								"<label style='margin-left: 10px;margin-right: 5px; min-width: 40px;width:auto;'>均线接近</label>",	
+								"<label for='md_checkbox_25{0}'><h4 class='box-title'>均线接近</h4></label>",
+								"<label style='margin-left: 10px;margin-right: 5px; min-width: 40px;width:auto;'>接近值</label>",	
 								"<input class='filled-in chk-col-success'  type='number' name='number' v-model='sourcelist.{0}.objval'>",					
 							"</div>",
 		  
