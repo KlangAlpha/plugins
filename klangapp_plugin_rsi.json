@@ -1,3 +1,4 @@
+{
     "id":"rsi",
     "name":"RSI超卖指标",
     "description":"通过RSI超卖决定是否卖买",
