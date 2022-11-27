@@ -14,3 +14,7 @@ KlangApp 插件，通过插件可以快速制定选股参数或者选股指标
 ### klangapp_plugin_xxx.json 写法参考其中一个文件
 klangapp_plugin_rsi.json
 
+其中：   "url":"https://github.com/KlangAlpha/plugins",
+
+必须是存放的github真实路径，安装插件的时候会检查核对。
+
