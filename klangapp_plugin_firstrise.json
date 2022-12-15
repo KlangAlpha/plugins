@@ -29,7 +29,7 @@
     "sourceconf":{
         "title":"###  筛选60日内首次涨停的股票 ###\n",
         "code":["
-        ret1 = (PERIOD - PERIOD[1]) / PERIOD[1]\n
+        ret = (PERIOD - PERIOD[1]) / PERIOD[1]\n
         ret = ret * 100\n
         if ret < 9.9:\n
            kstop;\n
