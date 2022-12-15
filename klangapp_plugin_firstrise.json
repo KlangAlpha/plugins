@@ -1,0 +1,54 @@
+{
+    "id":"firstrise",
+    "name":"60日内首次涨停",
+    "description":"找到60日内首次涨停的股票",
+    "author":"asmcos",
+    "url":"https://www.klang.org.cn",
+    "html":["<div class='box'>",
+          "<div class='box-header with-border'>",
+            "<div class='demo-checkbox'>",
+								"<input type='checkbox' id='md_checkbox_25{0}' class='filled-in chk-col-danger' checked='' v-model='sourcelist.{0}.select'>",
+								"<label for='md_checkbox_25{0}'><h4 class='box-title'>{1}</h4></label>",
+                                "<input type=checkbox id='md_checkbox_{0}' class=filled-in chk-col-primary checked='' v-model='sourcelist.{0}.lowprice'>",
+                                "<label for='md_checkbox_{0}'  style='margin-left:40px;'><h4 class='box-title'>低价股票</h4></label>",
+							"</div>",
+						"</div>",
+						"<div class='box-body' v-if='sourcelist.{0}.select'>",
+							"<div class='demo-radio-button'>",
+								"<input name='group9{0}' type='radio' id='radio_935{0}' class='with-gap radio-col-warning' v-model='sourcelist.{0}.period' value='V'>",
+								"<label for='radio_935{0}'>日线</label>",
+								"<input name='group9{0}' type='radio' id='radio_932{0}' class='with-gap radio-col-success' v-model='sourcelist.{0}.period' value='WV'>",
+								"<label for='radio_932{0}'>周线</label>",
+								"<input name='group9{0}' type='radio' id='radio_933{0}' class='with-gap radio-col-info' v-model='sourcelist.{0}.period' value='MV'>",
+								"<label for='radio_933{0}'>月线</label>",
+
+                                "</div>",
+                                "</div>",
+             "</div>"],
+    "sourceconf":{
+        "title":"###  筛选60日内首次涨停的股票 ###\n",
+        "code":["
+        ret1 = (PERIOD[1] - PERIOD[2]) / PERIOD[2]\n
+        ret = HHV(ret1,60)\n
+        ret = ret * 100
+        if ret > 9.9:\n
+           kstop;\n
+        "],
+        
+        "period":"C",
+        "select":true,
+        "lowprice":true
+    },
+    "watch":["peroid","select"],
+    "exec_code":["
+        if (that.sourcelist.{0}.select == true) {
+             code += that.sourcelist.{0}.title;
+             code += 'PERIOD = ' + that.sourcelist.{0}.period  + ';\\n';
+             code += that.sourcelist.{0}.code ; 
+             if (that.sourcelist.{0}.lowprice == true){
+                code += 'if  PERIOD < 5 or PERIOD > 8:\\n'; 
+                code += '      kstop;\\n'
+            }            
+        }"]
+    
+}
