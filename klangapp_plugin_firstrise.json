@@ -16,11 +16,11 @@
 						"</div>",
 						"<div class='box-body' v-if='sourcelist.{0}.select'>",
 							"<div class='demo-radio-button'>",
-								"<input name='group9{0}' type='radio' id='radio_935{0}' class='with-gap radio-col-warning' v-model='sourcelist.{0}.period' value='V'>",
+								"<input name='group9{0}' type='radio' id='radio_935{0}' class='with-gap radio-col-warning' v-model='sourcelist.{0}.period' value='C'>",
 								"<label for='radio_935{0}'>日线</label>",
-								"<input name='group9{0}' type='radio' id='radio_932{0}' class='with-gap radio-col-success' v-model='sourcelist.{0}.period' value='WV'>",
+								"<input name='group9{0}' type='radio' id='radio_932{0}' class='with-gap radio-col-success' v-model='sourcelist.{0}.period' value='WC'>",
 								"<label for='radio_932{0}'>周线</label>",
-								"<input name='group9{0}' type='radio' id='radio_933{0}' class='with-gap radio-col-info' v-model='sourcelist.{0}.period' value='MV'>",
+								"<input name='group9{0}' type='radio' id='radio_933{0}' class='with-gap radio-col-info' v-model='sourcelist.{0}.period' value='MC'>",
 								"<label for='radio_933{0}'>月线</label>",
 
                                 "</div>",
@@ -44,7 +44,7 @@
         "select":true,
         "lowprice":true
     },
-    "watch":["peroid","select"],
+    "watch":["peroid","select","lowprice"],
     "exec_code":["
         if (that.sourcelist.{0}.select == true) {
              code += that.sourcelist.{0}.title;

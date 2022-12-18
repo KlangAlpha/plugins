@@ -11,13 +11,13 @@
 								"<input type='checkbox' id='md_checkbox_25{0}' class='filled-in chk-col-danger' checked='' v-model='sourcelist.{0}.select'>",
 								"<label for='md_checkbox_25{0}'><h4 class='box-title'>{1}</h4></label>",
                                 "<label for='md_checkbox_{0}'  style='margin-left:40px;'><h4 class='box-title'>板块名称</h4></label>",
-								"<input class='filled-in chk-col-success'  type='text' name='text' v-model='sourcelist.{0}.objval'>",					
+								"<input class='filled-in chk-col-success'  type='text' v-model='sourcelist.{0}.objval'>",					
 				"</div>",
 			   "</div>",
              "</div>"],
     "sourceconf":{
         "title":"###  筛选板块块内的股票股票 ###\n",
-        "code":["
+        "code":["\n
         bk = getInfo('tdxbk')\n
         if bk != bkname:\n
            kstop;\n
@@ -25,9 +25,9 @@
         
         "period":"C",
         "select":true,
-        "objval":'水泥'
+        "objval":"水泥"
     },
-    "watch":["peroid","select"],
+    "watch":["peroid","select","objval"],
     "exec_code":["
         if (that.sourcelist.{0}.select == true) {
              code += that.sourcelist.{0}.title;
