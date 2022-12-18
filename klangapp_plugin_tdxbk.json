@@ -31,7 +31,7 @@
     "exec_code":["
         if (that.sourcelist.{0}.select == true) {
              code += that.sourcelist.{0}.title;
-             code += 'bkname = ' + that.sourcelist.{0}.objval + ';' ; 
+             code += 'bkname = \"' + that.sourcelist.{0}.objval + '\";' ; 
              code += that.sourcelist.{0}.code ; 
                         
         }"]
