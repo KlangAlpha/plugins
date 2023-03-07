@@ -4,7 +4,7 @@
     "description":"判断MA20和MA60是否相近",
     "author":"asmcos",
     "url":"https://github.com/KlangAlpha/plugins",
-    "enable":1,
+    "enable":0,
     "html":["<div class='box'>",
           "<div class='box-header with-border'>",
             "<div class='demo-checkbox'>",

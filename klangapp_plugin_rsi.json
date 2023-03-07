@@ -4,7 +4,7 @@
     "description":"通过RSI超卖决定是否卖买",
     "author":"asmcos",
     "url":"https://github.com/KlangAlpha/plugins",
-    "enable":1,
+    "enable":0,
     "html":["<div class='box'>",
           "<div class='box-header with-border'>",
             "<div class='demo-checkbox'>",
